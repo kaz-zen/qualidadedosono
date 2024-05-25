@@ -59,3 +59,5 @@ plt.figure(figsize=(12, 8))
 sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt=".2f")
 plt.title('Matriz de Correlação')
 plt.show()
+
+print('estou adicionando coisas')
