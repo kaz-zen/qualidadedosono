@@ -39,3 +39,4 @@ def grafico_Correlacao():
     sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt=".2f")
     plt.title('Matriz de Correlação')
     return plt.show()
+
