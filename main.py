@@ -7,4 +7,6 @@ import tratamentododataset as tratamento
 
 df = tratamento.retornarDataframeTratado()
 
+
+
 print(df.head())
