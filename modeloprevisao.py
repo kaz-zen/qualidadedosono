@@ -7,7 +7,7 @@ from sklearn.metrics import mean_squared_error, r2_score
 
 # Carregar o dataset
 url = "https://drive.google.com/uc?id=11BAOuVd8eBgy4bQ1XSfpPBs0sPI4HYzq"
-main.df = pd.read_csv(url)
+main.df = pd.read_csv(url, encoding="ISO-8859-1")
 
 # Substituir valores NaN na coluna 'Sleep Disorder' por 'No disorder'
 main.df['Sleep Disorder'] = main.df['Sleep Disorder'].fillna('No disorder')
