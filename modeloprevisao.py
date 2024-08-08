@@ -10,7 +10,7 @@ url = "https://drive.google.com/uc?id=11BAOuVd8eBgy4bQ1XSfpPBs0sPI4HYzq"
 main.df = pd.read_csv(url)
 
 # Substituir valores NaN na coluna 'Sleep Disorder' por 'No disorder'
-main.df['Sleep Disorder'].fillna('No disorder', inplace=True)
+main.df['Sleep Disorder'] = main.df['Sleep Disorder'].fillna('No disorder')
 
 # Mapear valores categóricos para números
 occupation_mapping = {
@@ -26,6 +26,8 @@ label_encoder = LabelEncoder()
 main.df['Gender'] = label_encoder.fit_transform(main.df['Gender'])
 main.df['BMI Category'] = label_encoder.fit_transform(main.df['BMI Category'])
 main.df['Blood Pressure'] = label_encoder.fit_transform(main.df['Blood Pressure'])
+
+# Codificar a coluna 'Sleep Disorder' após a substituição dos NaNs
 main.df['Sleep Disorder'] = label_encoder.fit_transform(main.df['Sleep Disorder'])
 
 # Definir características e alvos
