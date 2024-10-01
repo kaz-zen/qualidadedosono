@@ -3,12 +3,11 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import LabelEncoder #scikit-learn
 from sklearn.preprocessing import StandardScaler
-import main
 
-def grafico_Correlacao():
+def plotarGraficoCorrelacao(dataframe):
     ### Normalizando valores e imprimindo matriz de correlação
     # Copiar o DataFrame original
-    df_normalized = df.copy()
+    df_normalized = dataframe.copy()
 
     # Mapear valores categóricos para números
     gender_mapping = {'Male': 0, 'Female': 1}

@@ -1,16 +1,13 @@
-import main as main
 import pandas as pd
+import tratamentododataset as tratamento
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 
-# Carregar o dataset
-url = "https://drive.google.com/uc?id=11BAOuVd8eBgy4bQ1XSfpPBs0sPI4HYzq"
-main.df = pd.read_csv(url)
-
+df = tratamento.retornarDataframeTratado()
 # Substituir valores NaN na coluna 'Sleep Disorder' por 'No disorder'
-main.df['Sleep Disorder'].fillna('No disorder', inplace=True)
+df['Sleep Disorder'].fillna('No disorder', inplace=True)
 
 # Mapear valores categóricos para números
 occupation_mapping = {
@@ -19,18 +16,18 @@ occupation_mapping = {
     'Software Engineer': 9, 'Teacher': 10
 }
 
-main.df['Occupation'] = main.df['Occupation'].map(occupation_mapping)
+df['Occupation'] = df['Occupation'].map(occupation_mapping)
 
 # Transformar outras colunas categóricas em números
 label_encoder = LabelEncoder()
-main.df['Gender'] = label_encoder.fit_transform(main.df['Gender'])
-main.df['BMI Category'] = label_encoder.fit_transform(main.df['BMI Category'])
-main.df['Blood Pressure'] = label_encoder.fit_transform(main.df['Blood Pressure'])
-main.df['Sleep Disorder'] = label_encoder.fit_transform(main.df['Sleep Disorder'])
+df['Gender'] = label_encoder.fit_transform(df['Gender'])
+df['BMI Category'] = label_encoder.fit_transform(df['BMI Category'])
+df['Blood Pressure'] = label_encoder.fit_transform(df['Blood Pressure'])
+df['Sleep Disorder'] = label_encoder.fit_transform(df['Sleep Disorder'])
 
 # Definir características e alvos
-X = main.df[['Age', 'Occupation', 'Stress Level', 'Sleep Disorder']]
-y = main.df[['Sleep Duration', 'Quality of Sleep']]
+X = df[['Age', 'Occupation', 'Stress Level', 'Sleep Disorder']]
+y = df[['Sleep Duration', 'Quality of Sleep']]
 
 # Dividir os dados em conjuntos de treinamento e teste
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
