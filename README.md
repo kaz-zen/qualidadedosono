@@ -2,9 +2,6 @@
 
 Repositório com código em Python relacionado ao tema **qualidade do sono**. O projeto contém scripts para tratamento de dados, visualização/gráficos, análise de correlação e rotinas de previsão/modelagem, além de um experimento inicial com Streamlit. (Baseado nos nomes dos arquivos presentes no repositório.)
 
-> **Observação:** o repositório ainda não possui descrição oficial.  
-> Fonte: página do repositório.  
-
 ## Estrutura do projeto
 
 qualidadedosono/
@@ -21,9 +18,6 @@ qualidadedosono/
 ├─ main.py # (Pelo nome) ponto de entrada
 ├─ main_final.py # (Pelo nome) ponto de entrada “final”
 └─ steamlit_teste.py # (Pelo nome) teste com Streamlit
-
-markdown
-Copiar código
 
 ## Pré-requisitos
 
@@ -54,18 +48,3 @@ python main_final.py
 python main.py
 python modelo_previsao_final.py
 Dados: coloque os arquivos necessários dentro da pasta Dataset/ (já existente no repositório). Ajuste caminhos nos scripts se necessário.
-
-Notas
-Descrição, releases e tópicos não foram preenchidos na página do repositório até o momento.
-
-Licença: não há licença explicitamente informada. Caso pretenda reutilizar o código, confirme com os autores e/ou adicione um arquivo LICENSE.
-
-Contribuindo
-Sinta-se à vontade para propor melhorias:
-
-Abra uma issue descrevendo a sugestão/bug.
-
-Envie um pull request com a alteração proposta.
-
-Autores
-Consulte a aba de contribuidores do GitHub para ver quem já participou do projeto.
